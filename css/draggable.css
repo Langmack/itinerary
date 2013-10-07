@@ -1,0 +1,143 @@
+
+#eventHead {
+
+	font-size: 1.5em;
+	font-weight: strong;
+}
+
+.orginalTitle {
+	font-size: 1.5em;
+	font-weight: strong;
+
+
+}
+
+.resizeTitle {
+
+		width : 60%;
+		display : inline;
+		position : absolute;
+		margin-left : 6%;
+		margin-top : 8px;
+}
+
+
+#cards {
+float: left;
+width: 45%;
+min-height: 80%;
+}
+
+.description {
+	visibility: visible;
+}
+
+.descriptionOff {
+	display: none;
+}
+
+.ui-draggable {
+	background-color: #0097d6;
+	min-height: 10%;
+	width: 40%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+.catalog {
+	padding: 1%;
+	background-color: #0097d6;
+	min-height: 10%;
+	width: 400px;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+#calendar {
+	float: left;
+	width: 40%;
+	margin-left: 2%;
+
+}
+
+#container {
+	border-style: dashed;
+	min-height: 400px;
+	width: 410px;
+}
+
+.ui-droppable {
+
+}
+.calTitle {
+
+	text-align: center;
+}
+
+
+.eventPic {
+	float: left;
+	margin-right: 2%;
+	height: 140px;
+	width: 150px;
+
+}
+
+.clear {
+	clear: both;
+}
+
+#addButton {
+	float: right;
+	max-width: 40px;
+	max-height: 40px;
+}
+
+#backButton{
+	float: right;
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.thumbnail {
+
+	float : left;
+	height: 50px;
+	width: 50px;
+	display: inline;
+}
+
+.resizeTitle {
+
+		width : 60%;
+		display : inline;
+		position : absolute;
+		margin-left : 6%;
+		margin-top : 8px;
+}
+.aButtonOn {
+visibility : visible;
+float: right;
+max-width: 40px;
+max-height: 40px;
+}
+.aButtonOff {
+visibility: hidden;
+float: left;
+max-width: 40px;
+max-height: 40px;
+}
+
+.bButtonOn {
+visibility : visible;
+z-index:500;
+float: right;
+max-width: 40px;
+max-height: 40px;
+}
+
+.bButtonOff {
+float: left;
+visibility: hidden;
+max-width: 40px;
+max-height: 40px;
+}

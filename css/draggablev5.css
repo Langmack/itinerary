@@ -1,0 +1,357 @@
+
+#nav {
+	list-style: none;
+}
+
+#nav ul > li {
+	display: inline;
+	margin: 1px;
+}
+
+#fun {
+	border-radius: 10%;
+	background-color: #608495;
+	color: #FFF;
+	padding: 10px;
+	border-bottom: 2px solid rgba(255,255,255,0.4);
+	border-left: 2px solid rgba(255,255,255,0.4);
+	text-shadow: 0 1px 0 #000;
+}
+#shopping {
+	border-radius: 10%;
+	background-color: #608495;
+	color: #FFF;
+	padding: 10px;
+	border-bottom: 2px solid rgba(255,255,255,0.4);
+	border-left: 2px solid rgba(255,255,255,0.4);
+	text-shadow: 0 1px 0 #000;
+
+}
+#food {
+	border-radius: 10%;
+	background-color: #608495;
+	color: #FFF;
+	padding: 10px;
+	border-bottom: 2px solid rgba(255,255,255,0.4);
+	border-left: 2px solid rgba(255,255,255,0.4);
+	text-shadow: 0 1px 0 #000;
+
+}
+
+#fun:hover {
+	border-radius: 10%;
+	background-color: #00496a;
+	color: #FFF;
+	padding: 10px;
+	text-shadow: 0 1px 0 #000;
+}
+#shopping:hover {
+	border-radius: 10%;
+	background-color: #00496a;
+	color: #FFF;
+	padding: 10px;
+	text-shadow: 0 1px 0 #000;
+
+}
+#food:hover {
+	border-radius: 10%;
+	background-color: #00496a;
+	color: #FFF;
+	padding: 10px;
+	text-shadow: 0 1px 0 #000;
+
+}
+
+#eventHead {
+
+	font-size: 1.5em;
+	font-weight: strong;
+}
+
+.dropExpand {
+	height: 40px;
+	width: 30px;
+	float: right;
+	line-height: 50px;
+	margin-top: 10px;
+	margin-left: 0;
+	margin-right: 0px;
+
+}
+
+.upContract {
+transform:rotate(180deg);
+-ms-transform:rotate(180deg); /* IE 9 */
+-webkit-transform:rotate(180deg);
+	height: 40px;
+	width: 30px;
+	float: right;
+
+}
+
+.choices {
+list-style: none;
+}
+
+.drag {
+	width: 280px;
+	padding: 1%;
+	background-color: #608495;
+	min-height: 10%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border: 2px solid #000;
+	box-shadow: -1px 1px 5px #000;
+}
+
+.dragB {
+	width: 280px;
+	padding: 1%;
+	background-color: #608495;
+	min-height: 10%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border: 2px solid #000;
+	box-shadow: -1px 1px 5px #000;
+
+}
+
+.dragC {
+	width: 218px;
+	padding: 1%;
+	background-color: #608495;
+	min-height: 10%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border: 2px solid #000;
+	box-shadow: -1px 1px 5px #000;
+
+}
+
+.newTitle {
+	font-size: 1.5em;
+	text-align: center;
+
+
+}
+
+.resizeTitle {
+	float: left;
+	line-height: 20px;
+	text-align: center;
+	margin-left: 0;
+	width: 180px;
+	color: #000;
+	z-index: 0;
+	margin-right: 0px;
+	display: inline;
+	margin-left: 0px;
+	z-index: 0;
+
+}
+
+.smallTitle {
+	float: left;
+	line-height: 20px;
+	text-align: center;
+	margin-left: 0;
+	width: 180px;
+	color: #000;
+	z-index: 0;
+	margin-right: 0px;
+	display: inline;
+	margin-left: 0px;
+	z-index: 0;
+
+}
+.smallTitleB {
+	line-height: 30px;
+	text-align: center;
+	margin-left: 60px;
+	width: 160px;
+	color: #000;
+	margin-right: 0px;
+	display: inline;
+	margin-left: 0px;
+	float: left;
+
+}
+.thumbnail {
+	float: left;
+	height: 50px;
+	width: 50px;
+	margin-top: 1%;
+	display: inline;
+	border: 2px solid #FFF;
+	z-index: 1;
+}
+
+.smallTitle {
+	width: 120px;
+	margin-left: 5.5%;
+}
+
+.activeDrag {
+	background-color: #0097d6;
+	border:none;
+}
+
+.hoverDrag {
+	background-color: #9fdbea;
+	font: #FFF;
+}
+
+.cardDrag{
+	background-color: #9fdbea;
+}
+
+#cards {
+	float: left;
+	width: 370px;
+}
+
+.description {
+	visibility: visible;
+}
+
+.descriptionOff {
+	display: none;
+}
+
+
+
+.resizeTitle:hover {
+	cursor: move;
+}
+
+#activity img:hover {
+	cursor: auto;
+}
+
+#calendar {
+
+	float: right;
+	width: 59%;
+	margin-left: 1%;
+
+}
+
+#containerA {
+	margin-left: 0px;
+	border: 3px solid #000;
+	min-height: 500px;
+	width: 225px;
+	background-color: #608495;
+
+	background: -webkit-linear-gradient(bottom, #608495, white);
+	background: -moz-linear-gradient(bottom, #608495, white);
+	background: -o-linear-gradient(bottom, #608495, white);
+	background: -ms-linear-gradient(bottom, #608495, white);
+	background: linear-gradient(bottom, #608495, white);
+}
+
+#containerB {
+	border: 3px solid #000;
+	min-height: 500px;
+	width: 225px;
+	border-left: none;
+	background-color: #00496a;
+
+	background: -webkit-linear-gradient(bottom, #00496a, white);
+	background: -moz-linear-gradient(bottom, #00496a, white);
+	background: -o-linear-gradient(bottom, #00496a, white);
+	background: -ms-linear-gradient(bottom, #00496a, white);
+	background: linear-gradient(bottom, #00496a, white);
+}
+
+#containerC {
+	border: 3px solid #000;
+	min-height: 500px;
+	width: 225px;
+	border-left: none;
+	background-color: #608495;
+
+	background: -webkit-linear-gradient(bottom, #608495, white);
+	background: -moz-linear-gradient(bottom, #608495, white);
+	background: -o-linear-gradient(bottom, #608495, white);
+	background: -ms-linear-gradient(bottom, #608495, white);
+	background: linear-gradient(bottom, #608495, white);
+}
+
+
+
+
+#fri {
+float: left;
+}
+
+#sat{
+	float: left;
+
+}
+
+#sun {
+	float: left;
+
+
+}
+#headA{
+	margin-left: 10px;
+}
+
+#headB{
+	margin-left: 10px;
+}
+
+#headC{
+	margin-left: 10px;
+}
+
+.calHead {
+	font-size: 1.5em;
+	width: 60px;
+	margin: 35px;
+
+}
+
+.ui-droppable {
+
+}
+.calTitle {
+
+	text-align: center;
+	font-size: 1.5em;
+}
+
+
+.eventPic {
+	float: left;
+	margin-bottom: 0px;
+	margin-right: 2%;
+	height: 140px;
+	width: 150px;
+	border: 2px solid #FFF;
+
+}
+
+.clear {
+	clear: both;
+}
+
+
+.upContract:hover {
+
+	cursor: pointer;
+}
+
+.dropExpand:hover {
+
+	cursor: pointer;
+}
+
+.arrow {
+	width: 30px;
+	height: 30px;
+}
+
+

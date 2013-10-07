@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/draggablev6.css">
+</head>
+<body>
+<div id="nav">
+	<ul>
+		<li id="food">Food</li>
+		<li id="fun">Fun</li>
+		<li id="shopping">Shopping</li>
+	</ul>
+	
+	<ul class="choices">
+	<li id="random">More Choices</li>
+	</ul>
+
+</div>
+
+<div id="cards" class="cards ui-helper-reset ui-helper-clearfix sortBlock">
+	<!-- EXAMPLE CARDS
+	<div id="activity" class="catalog ui-widget-content ui-corner-tr">
+		<p id="eventHead" class="eventHead">This is an Event Title</p>
+		<img id="eventPic" class="eventPic" src="http://placehold.it/140x150" height: "140px" width: "150px"/>
+		<p id="description" class="description">This is the content section that will provide a description of event.
+			If this is a particularily long desciption this, is how the content 
+			would wrap. Content, Content, Content, Content, Content, Content,
+			Content, Content, Content, Content, Content, Content, Content, Content,
+			Content.
+		</p>
+		<img src="img/send.png" title="Add this activity to your weekend" id="addButton" class="ui-icon aButtonOn"/>
+		<img src="img/back.png" title="Send back" id="backButton" class="ui-icon bButtonOff"/>
+		<div class="clear"></div>
+	</div>
+
+		<div id="activity" class="catalog ui-widget-content ui-corner-tr">
+		<p id="eventHead" class="eventHead">This is a 2nd Event Title</p>
+		<img id="eventPic" class="eventPic" src="http://placehold.it/140x150" height: "140px" width: "150px"/>
+		<p id="description" class="description">This is the content section that will provide a description of event.
+			If this is a particularily long desciption this, is how the content 
+			would wrap. Content, Content, Content, Content, Content, Content,
+			Content, Content, Content, Content, Content, Content, Content, Content,
+			Content.
+		</p>
+		<img src="img/send.png" title="Add this activity to your weekend" id="addButton" class="ui-icon aButtonOn"/>
+		<img src="img/back.png" title="Send back" id="backButton" class="ui-icon bButtonOff"/>
+		<div class="clear"></div>
+	</div>
+	<div id="activity" class="catalog ui-widget-content ui-corner-tr">
+		<p id="eventHead" class="eventHead">This is a 3rd Event Title</p>
+		<img id ="eventPic" class="eventPic" src="http://placehold.it/140x150" height: "140px" width: "150px"/>
+		<p id="description" class="description">This is the content section that will provide a description of event.
+			If this is a particularily long desciption this, is how the content 
+			would wrap. Content, Content, Content, Content, Content, Content,
+			Content, Content, Content, Content, Content, Content, Content, Content,
+			Content.
+		</p>
+		<img src="img/send.png" title="Add this activity to your weekend" id="addButton" class="ui-icon aButtonOn"/>
+		<img src="img/back.png" title="Send back" id="backButton" class="ui-icon bButtonOff"/>
+		<div class="clear"></div>
+	</div>
+-->
+
+<div class="clear"></div>
+
+</div>
+
+<div id="calendar" class="ui-widget-calendar ui-state-default">
+	<p class="calTitle">My Baltimore Weekend</p>
+    <div id="fri">
+   			 <span id="headA">Fri</span>
+				<div id="containerA" class="sortBlock dayContainer">
+					<div class="placeholder"> Drag your activities here </div>
+				</div>
+  	</div>
+  	<div id="sat">
+    		<span id="headB">Sat</span>
+    			<div id="containerB" class="sortBlock dayContainer">
+   					 <div class="placeholder"> Drag your activities here </div>
+    			</div>
+  	</div>
+  	<div id="sun">
+    		<span id="headC">Sun</span>
+    			<div id="containerC" class="sortBlock dayContainer">
+   					 <div class="placeholder"> Drag your activities here </div>
+  				</div>
+  	</div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/tabletop.js"></script>
+<script src="js/jquery.rotate.1-1.js"></script>
+<!-- Tabletop JS begins -->
+
+<script type="text/javascript">
+  window.onload = function() { init() };
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/ccc?key=0An2A_iC7hi7rdDRkSlNoRU1HUHowX1dINWNhX2pkc1E&usp=sharing';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+
+<!-- END tabletop -->
+
+
+<!-- BEGIN Application usind Jquery UI -->
+
+
+function showInfo(data, tabletop) {
+
+var arr = data;
+console.log(arr);
+
+/*
+	for(i=0 ; i<10 ; i++){
+
+	$("#cards").append("<div id='activity' class='drag'><p id='resizeTitle' class='resizeTitle'>" + arr[i].name + "</p><img id='eventPic' class='thumbnail' src='"+arr[i].photourl+"'/><p id='description' class='descriptionOff'> " + arr[i].description + "</p><div id='addButton' class='plus'> + </div><div class='clear'></div></div>");
+};
+*/
+
+var	$calendar = $("#calendar"),
+	$container = $("#container")
+
+$(function() {
+   
+
+    $("#containerA").sortable({      
+      connectWith: ".sortBlock",
+      receive: function( event, ui ) {
+        $(this).find(".placeholder").remove();
+        var newItem = ui.item
+        if(newItem.hasClass("drag")){
+        newItem.toggleClass("drag dragC");
+        newItem.find("#resizeTitle").toggleClass("resizeTitle smallTitle");
+   	 } else { }
+       
+
+      },
+
+
+    }).disableSelection();
+
+        $("#containerB").sortable({      
+      connectWith: ".sortBlock",
+      receive: function( event, ui ) {
+        $(this).find(".placeholder").remove();
+        var newItem = ui.item
+       if(newItem.hasClass("drag")){
+        newItem.toggleClass("drag dragC");
+        newItem.find("#resizeTitle").toggleClass("resizeTitle smallTitle");
+   	 } else {}
+  
+      },
+
+    }).disableSelection();
+
+        $("#containerC").sortable({      
+      connectWith: ".sortBlock",
+      receive: function( event, ui ) {
+      	var newItem = ui.item
+        $(this).find(".placeholder").remove();
+      if(newItem.hasClass("drag")){
+        newItem.toggleClass("drag dragC");
+        newItem.find("#resizeTitle").toggleClass("resizeTitle smallTitle");
+   	 } else {
+
+       }  
+      },
+
+    }).disableSelection();
+
+    $("#cards").sortable({
+      connectWith: ".sortBlock",
+      receive: function(event, ui) {
+      	var newItem = ui.item
+        newItem.toggleClass("drag dragC");
+        newItem.find("#resizeTitle").toggleClass("resizeTitle smallTitle");
+        if( $("#containerA").text() == 0) {
+	$("#containerA").append("<p class='placeholder'>Drag your activities here.</p>");
+} 
+        if( $("#containerB").text() == 0) {
+	$("#containerB").append("<p class='placeholder'>Drag your activities here.</p>");
+}
+        if( $("#containerC").text() == 0) {
+	$("#containerC").append("<p class='placeholder'>Drag your activities here.</p>");
+}
+  }
+
+    }).disableSelection();   
+
+
+});
+
+$(document).on("click","#addButton", function(){
+
+
+  var $tp = $(this).parent();
+
+  $tp.find("#description").toggleClass("descriptionOff description");
+    if ($tp.parent().hasClass("dayContainer")){
+    	$tp.find("#resizeTitle").removeClass("newTitle")
+    	$tp.find("#resizeTitle").toggleClass("smallTitle smallTitleB");
+}else {
+	  $tp.find("#resizeTitle").toggleClass("resizeTitle newTitle");
+};
+
+  if ($tp.parent().hasClass("dayContainer")){
+}else {
+	$tp.find("#eventPic").toggleClass("thumbnail eventPic");
+};
+
+  $tp.toggleClass("drag dragB");
+  $(this).toggleClass("upContract dropExpand");
+});
+
+$("#food").on("click", function(){
+
+		if ($("#activity").hasClass("shopping")){
+		$("#cards").children().remove();
+	};
+
+	if ($("#activity").hasClass("fun")){
+		$("#cards").children().remove();
+	};
+
+
+	for(i=0 ; i< arr.length ; i++){
+
+		var food = arr[i].category == "Food";
+
+
+	if (food) {
+
+	$("#cards").append("<div id='activity' class='drag food'><img id='eventPic' class='thumbnail' src='"+arr[i].photourl+"'/><p id='resizeTitle' class='resizeTitle'>" + arr[i].name + "</p><p id='description' class='descriptionOff'> " + arr[i].description + "</p><div id='addButton' class='dropExpand'><img class='arrow' src='img/arrow.png'></div><div class='clear'></div></div>");
+		};
+	};
+
+});
+
+$("#fun").on("click", function(){
+
+	if ($("#activity").hasClass("shopping")){
+		$("#cards").children().remove();
+	};
+
+	if ($("#activity").hasClass("food")){
+		$("#cards").children().remove();
+	};
+
+	for(i=0 ; i< arr.length ; i++){
+
+	var fun = arr[i].category == "Fun";
+
+
+	if (fun) {
+
+	$("#cards").append("<div id='activity' class='drag fun'><img id='eventPic' class='thumbnail' src='"+arr[i].photourl+"'/><p id='resizeTitle' class='resizeTitle'>" + arr[i].name + "</p><p id='description' class='descriptionOff'> " + arr[i].description + "</p><div id='addButton' class='dropExpand'><img class='arrow' src='img/arrow.png'></div><div class='clear'></div></div>");
+		};
+	};
+});
+$("#shopping").on("click", function(){
+
+	if ($("#activity").hasClass("fun")){
+		$("#cards").children().remove();
+	};
+
+	if ($("#activity").hasClass("food")){
+		$("#cards").children().remove();
+	};
+
+
+	for(i=0 ; i< arr.length ; i++){
+
+	var shopping = arr[i].category == "Shopping";
+
+	if (shopping) {
+
+	$("#cards").append("<div id='activity' class='drag shopping'><img id='eventPic' class='thumbnail' src='"+arr[i].photourl+"'/><p id='resizeTitle' class='resizeTitle'>" + arr[i].name + "</p><p id='description' class='descriptionOff'> " + arr[i].description + "</p><div id='addButton' class='dropExpand'><img class='arrow' src='img/arrow.png'></div><div class='clear'></div></div>");
+		};
+	};
+});
+
+$("#random").on("click", function(){
+	$("#cards").empty();
+	var rand = Math.random();
+		val = rand * arr.length;
+		randRo = Math.round(val);
+
+		newArr = arr.slice(randRo, randRo + 10)
+
+	for(i=0 ; i< newArr.length ; i++){
+
+	var newfood = newArr[i].category == "Food";
+
+	if(newfood) {
+	$("#cards").append("<div id='activity' class='drag food'><img id='eventPic' class='thumbnail' src='"+ newArr[i].photourl +"'/><p id='resizeTitle' class='resizeTitle'>" + newArr[i].name + "</p><p id='description' class='descriptionOff'> " + newArr[i].description + "</p><div id='addButton' class='dropExpand'><img class='arrow' src='img/arrow.png'></div><div class='clear'></div></div>");
+		};
+	};
+
+});
+
+};
+
+
+//This is where your addbutton functions will go. 
+
+
+
+
+</script>
+
+
+</body>
+</html>
